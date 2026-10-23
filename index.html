@@ -264,4 +264,76 @@
   <p style="color:green; font-size:22px; font-weight:bold;">₹1,499</p>
   <button onclick="alert('Product selected!')" style="background:#2563eb; color:white; border:0; padding:12px 24px; border-radius:8px; cursor:pointer;">Buy Now</button>
 </div>
+    <section class="calculator">
+  <h2>Simple Calculator</h2>
+
+  <input type="number" id="num1" placeholder="First number">
+  <input type="number" id="num2" placeholder="Second number">
+
+  <div class="buttons">
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">−</button>
+    <button onclick="calculate('*')">×</button>
+    <button onclick="calculate('/')">÷</button>
+  </div>
+
+  <h3 id="result">Result: </h3>
+</section>
+
+<style>
+.calculator {
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.calculator input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.calculator button {
+  padding: 10px 18px;
+  margin: 5px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function calculate(operator) {
+  const a = Number(document.getElementById("num1").value);
+  const b = Number(document.getElementById("num2").value);
+  let answer;
+
+  if (
+    document.getElementById("num1").value === "" ||
+    document.getElementById("num2").value === ""
+  ) {
+    document.getElementById("result").textContent =
+      "Please enter both numbers";
+    return;
+  }
+
+  if (operator === "+") answer = a + b;
+  else if (operator === "-") answer = a - b;
+  else if (operator === "*") answer = a * b;
+  else if (operator === "/") {
+    if (b === 0) {
+      document.getElementById("result").textContent =
+        "Cannot divide by zero";
+      return;
+    }
+    answer = a / b;
+  }
+
+  document.getElementById("result").textContent =
+    "Result: " + answer;
+}
+</script>
 </html>
