@@ -1,403 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snehalatha | Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #0f172a;
-      color: white;
-      line-height: 1.6;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 8%;
-      background: #111827;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav h2 {
-      color: #38bdf8;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 7vw, 60px);
-      margin-bottom: 10px;
-    }
-
-    .hero h1 span {
-      color: #38bdf8;
-    }
-
-    .hero h3 {
-      color: #94a3b8;
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: #cbd5e1;
-      font-size: 18px;
-      line-height: 1.8;
-      max-width: 650px;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 8px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #38bdf8;
-      color: #0f172a;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0284c7;
-      color: white;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #38bdf8;
-      color: #38bdf8;
-    }
-
-    .btn-outline:hover {
-      background: #38bdf8;
-      color: #0f172a;
-    }
-
-    section {
-      padding: 65px 8%;
-      text-align: center;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: #38bdf8;
-      margin-bottom: 25px;
-      font-size: 32px;
-      border-bottom: 2px solid #1e293b;
-      padding-bottom: 10px;
-    }
-
-    section p {
-      color: #cbd5e1;
-      line-height: 1.8;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      padding: 22px;
-      border-radius: 12px;
-      text-align: left;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #94a3b8;
-      margin-bottom: 15px;
-    }
-
-    /* Calculator Section Styling */
-    .calculator {
-      max-width: 380px;
-      margin: 30px auto;
-      padding: 25px;
-      text-align: center;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-    }
-
-    .calculator input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      background: #0f172a;
-      color: white;
-      font-size: 16px;
-    }
-
-    .calc-btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .calc-btn-group button {
-      padding: 12px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      border: none;
-      background: #38bdf8;
-      color: #0f172a;
-      cursor: pointer;
-    }
-
-    .calc-btn-group button:hover {
-      background: #0284c7;
-      color: white;
-    }
-
-    #result {
-      margin-top: 20px;
-      color: #38bdf8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #111827;
-      color: #94a3b8;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        margin: 0 8px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snehalatha | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <h1>U. Snehalatha</h1>
+        <p>B.Tech 3rd Year Student | CSE</p>
+        <p>NBKR Institute of Science and Technology</p>
+    </header>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <h2>U. Snehalatha</h2>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am a B.Tech student interested in web development,
+            SQL, data analytics, and Artificial Intelligence.
+            I enjoy learning new technologies and building projects.
+        </p>
+    </section>
 
-  <!-- Hero Section -->
-  <div class="hero" id="home">
-    <h1>Hi, I'm <span>Snehalatha</span> 👋</h1>
-    <h3>B.Tech AI & Data Science Student</h3>
-    <p>
-      Welcome to my portfolio! I am an aspiring developer passionate about technology, 
-      programming, data analytics, and Artificial Intelligence.
-    </p>
+    <section>
+        <h2>My Skills</h2>
+        <ul>
+            <li>HTML and CSS</li>
+            <li>JavaScript Basics</li>
+            <li>SQL</li>
+            <li>Python Basics</li>
+        </ul>
+    </section>
 
-    <div class="buttons">
-      <a href="#projects" class="btn">View My Projects</a>
-      <a href="#contact" class="btn btn-outline">Contact Me</a>
-    </div>
-  </div>
+    <section>
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Personal Portfolio</h3>
+            <p>A website to showcase my skills and projects.</p>
+        </div>
+        <div class="project">
+            <h3>SQL Analytics</h3>
+            <p>Learning SQL analytics and business intelligence.</p>
+        </div>
+        <p>
+            GitHub:
+            <a href="https://github.com/" target="_blank">My GitHub</a>
+        </p>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am currently pursuing my B.Tech in Artificial Intelligence and Data Science at 
-      <strong>NBKR Institute of Science and Technology</strong>. I completed my diploma at 
-      <strong>Audisankara College of Engineering and Technology</strong>. I am interested in improving my 
-      technical skills, software development, Java programming, SQL, and gaining practical experience through projects.
-    </p>
-  </section>
+    <section>
+        <h2>Contact</h2>
+        <p>Email: snehalathauppu@gmail.com</p>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills & Interests</h2>
-    <div class="grid-container">
-      <div class="card">
-        <h3>Programming</h3>
-        <p>Java, Python programming, and fundamental logic building.</p>
-      </div>
-      <div class="card">
-        <h3>Data Analytics & SQL</h3>
-        <p>SQL analytics, data analysis, and business intelligence techniques.</p>
-      </div>
-      <div class="card">
-        <h3>Artificial Intelligence</h3>
-        <p>Exploring Generative AI concepts and AI-driven applications.</p>
-      </div>
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>HTML, CSS, JavaScript, and building responsive personal web apps.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-
-    <div class="grid-container">
-      <div class="card">
-        <h3>Student Marks Analysis</h3>
-        <p>Python project to display student marks, calculate average scores, and identify toppers.</p>
-        <a href="https://github.com/snehalathauppu-ux/student-marks-analysis" target="_blank" class="btn">View Project</a>
-      </div>
-
-      <div class="card">
-        <h3>Student Grade Calculator</h3>
-        <p>Python tool to compute total marks, grade point average, and pass/fail results.</p>
-        <a href="https://github.com/snehalathauppu-ux/student-grade-calculator" target="_blank" class="btn">View Project</a>
-      </div>
-
-      <div class="card">
-        <h3>E-Commerce Product Card</h3>
-        <p>Interactive web UI displaying product info with dynamic selection actions.</p>
-        <button onclick="alert('Product selected!')" class="btn">Demo Action</button>
-      </div>
-    </div>
-
-    <!-- Embedded Calculator App -->
-    <div class="calculator">
-      <h3 style="color: #38bdf8; margin-bottom: 10px;">Interactive Simple Calculator</h3>
-      <input type="number" id="num1" placeholder="Enter first number">
-      <input type="number" id="num2" placeholder="Enter second number">
-
-      <div class="calc-btn-group">
-        <button onclick="calculate('+')">+</button>
-        <button onclick="calculate('-')">−</button>
-        <button onclick="calculate('*')">×</button>
-        <button onclick="calculate('/')">÷</button>
-      </div>
-
-      <h3 id="result">Result: —</h3>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="grid-container">
-      <div class="card">
-        <h3>B.Tech - AI & Data Science</h3>
-        <p><strong>NBKR Institute of Science and Technology</strong></p>
-        <p>Status: Currently Pursuing</p>
-      </div>
-      <div class="card">
-        <h3>Diploma</h3>
-        <p><strong>Audisankara College of Engineering and Technology</strong></p>
-        <p>Status: Completed</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for learning opportunities and collaboration!</p>
-    <br>
-    <p>Email: <a href="mailto:snehalathauppu@gmail.com" style="color: #38bdf8;">snehalathauppu@gmail.com</a></p>
-    <br>
-    <a class="btn" href="mailto:snehalathauppu@gmail.com">Send Email</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 U. Snehalatha | Personal Portfolio</p>
-  </footer>
-
-  <!-- Calculator Script -->
-  <script>
-    function calculate(operator) {
-      const val1 = document.getElementById("num1").value;
-      const val2 = document.getElementById("num2").value;
-
-      if (val1 === "" || val2 === "") {
-        document.getElementById("result").textContent = "Please enter both numbers";
-        return;
-      }
-
-      const a = Number(val1);
-      const b = Number(val2);
-      let answer;
-
-      if (operator === "+") answer = a + b;
-      else if (operator === "-") answer = a - b;
-      else if (operator === "*") answer = a * b;
-      else if (operator === "/") {
-        if (b === 0) {
-          document.getElementById("result").textContent = "Cannot divide by zero";
-          return;
-        }
-        answer = a / b;
-      }
-
-      document.getElementById("result").textContent = "Result: " + answer;
-    }
-  </script>
-
+    <footer>
+        <p>© 2026 U. Snehalatha | My Portfolio</p>
+    </footer>
 </body>
 </html>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #263238;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #183153;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+section {
+    max-width: 800px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000012;
+}
+
+h2 {
+    color: #2563eb;
+}
+
+.project {
+    padding: 12px;
+    margin: 12px 0;
+    border-left: 4px solid #2563eb;
+    background-color: #f4f7fb;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #183153;
+    color: white;
+}
