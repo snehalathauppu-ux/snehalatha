@@ -24,6 +24,7 @@
             line-height: 1.7;
         }
 
+        /* Landing Section */
         .landing {
             background: linear-gradient(135deg, #141e30, #243b55);
             color: white;
@@ -65,6 +66,7 @@
             background: white;
         }
 
+        /* Navigation */
         nav {
             background: #243b53;
             padding: 14px 10px;
@@ -86,6 +88,7 @@
             color: #66e3ff;
         }
 
+        /* Sections */
         section {
             max-width: 1100px;
             margin: auto;
@@ -100,9 +103,12 @@
             border-bottom: 2px solid #087e8b;
         }
 
+        /* Cards */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(
+                auto-fit, minmax(220px, 1fr)
+            );
             gap: 20px;
         }
 
@@ -126,6 +132,7 @@
             font-weight: bold;
         }
 
+        /* Buttons */
         .btn {
             display: inline-block;
             background: #087e8b;
@@ -142,6 +149,7 @@
             background: #065f68;
         }
 
+        /* Product */
         .product-card {
             max-width: 340px;
             margin: auto;
@@ -162,6 +170,7 @@
             margin-top: 8px;
         }
 
+        /* Calculator */
         .calculator {
             max-width: 400px;
             margin: auto;
@@ -206,6 +215,7 @@
             overflow-wrap: anywhere;
         }
 
+        /* Contact */
         .contact p {
             margin: 8px 0;
         }
@@ -215,6 +225,7 @@
             font-weight: bold;
         }
 
+        /* Footer */
         footer {
             background: #102a43;
             color: white;
@@ -222,6 +233,7 @@
             padding: 18px;
         }
 
+        /* Mobile View */
         @media (max-width: 600px) {
             .landing {
                 padding: 45px 15px;
@@ -252,6 +264,7 @@
     <!-- Welcome Section -->
     <header class="landing" id="home">
         <h1>Hi, I'm <span>Snehalatha</span> 👋</h1>
+
         <h2>Aspiring Developer</h2>
 
         <p>
@@ -260,10 +273,17 @@
             I enjoy learning new skills and building projects.
         </p>
 
-        <a href="#projects" class="landing-btn">View My Projects</a>
-        <a href="#contact" class="landing-btn">Contact Me</a>
+        <a href="#projects" class="landing-btn">
+            View My Projects
+        </a>
 
-        <p>NBKR Institute of Science and Technology</p>
+        <a href="#contact" class="landing-btn">
+            Contact Me
+        </a>
+
+        <p>
+            NBKR Institute of Science and Technology
+        </p>
     </header>
 
     <!-- Navigation -->
@@ -281,6 +301,7 @@
     <!-- About -->
     <section id="about">
         <h2>About Me</h2>
+
         <p>
             I am currently pursuing my B.Tech in Artificial Intelligence
             and Data Science at NBKR Institute of Science and Technology.
@@ -324,7 +345,10 @@
         <div class="card-container">
             <div class="card">
                 <h3>Personal Portfolio</h3>
-                <p>A website to showcase my education, skills, and projects.</p>
+                <p>
+                    A personal website to showcase my education,
+                    skills, and projects.
+                </p>
             </div>
 
             <div class="card">
@@ -333,8 +357,14 @@
                     A Python project to display student marks,
                     calculate average marks, and find the topper.
                 </p>
-                <a href="https://github.com/snehalathauppu-ux/student-marks-analysis"
-                   target="_blank" rel="noopener noreferrer">View Project</a>
+
+                <a
+                    href="https://github.com/snehalathauppu-ux/student-marks-analysis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Project
+                </a>
             </div>
 
             <div class="card">
@@ -343,18 +373,30 @@
                     A Python project to calculate total marks,
                     average, grade, and pass or fail result.
                 </p>
-                <a href="https://github.com/snehalathauppu-ux/student-grade-calculator"
-                   target="_blank" rel="noopener noreferrer">View Project</a>
+
+                <a
+                    href="https://github.com/snehalathauppu-ux/student-grade-calculator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Project
+                </a>
             </div>
 
             <div class="card">
                 <h3>SQL Analytics &amp; BI</h3>
-                <p>Learning SQL analytics and business intelligence through online courses.</p>
+                <p>
+                    Learning SQL analytics and business intelligence
+                    through online courses.
+                </p>
             </div>
 
             <div class="card">
                 <h3>Generative AI</h3>
-                <p>Learning the fundamentals and applications of Generative AI.</p>
+                <p>
+                    Learning the fundamentals and applications
+                    of Generative AI.
+                </p>
             </div>
         </div>
     </section>
@@ -372,7 +414,9 @@
 
             <div class="card">
                 <h3>Diploma</h3>
-                <p>Audi Sankara College of Engineering and Technology</p>
+                <p>
+                    Audi Sankara College of Engineering and Technology
+                </p>
                 <p>Completed</p>
             </div>
         </div>
@@ -383,13 +427,19 @@
         <h2>Sample Product</h2>
 
         <div class="card product-card">
-            <img src="https://placehold.co/400x300?text=Wireless+Headphones"
-                 alt="Wireless Headphones">
+            <img
+                src="https://placehold.co/400x300?text=Wireless+Headphones"
+                alt="Wireless Headphones"
+            >
 
             <h3>Wireless Headphones</h3>
             <p class="price">₹1,499</p>
 
-            <button class="btn" type="button" onclick="selectProduct()">
+            <button
+                class="btn"
+                type="button"
+                onclick="selectProduct()"
+            >
                 Buy Now
             </button>
         </div>
@@ -400,11 +450,19 @@
         <div class="calculator">
             <h2>Simple Calculator</h2>
 
-            <input type="number" id="num1"
-                   placeholder="Enter first number" step="any">
+            <input
+                type="number"
+                id="num1"
+                placeholder="Enter first number"
+                step="any"
+            >
 
-            <input type="number" id="num2"
-                   placeholder="Enter second number" step="any">
+            <input
+                type="number"
+                id="num2"
+                placeholder="Enter second number"
+                step="any"
+            >
 
             <div>
                 <button type="button" onclick="calculate('+')">+</button>
@@ -459,19 +517,24 @@
                 case "+":
                     answer = a + b;
                     break;
+
                 case "-":
                     answer = a - b;
                     break;
+
                 case "*":
                     answer = a * b;
                     break;
+
                 case "/":
                     if (b === 0) {
                         result.textContent = "Cannot divide by zero.";
                         return;
                     }
+
                     answer = a / b;
                     break;
+
                 default:
                     result.textContent = "Invalid operation.";
                     return;
