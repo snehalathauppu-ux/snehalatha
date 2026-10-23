@@ -1,118 +1,494 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snehalatha | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .landing {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .landing h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .landing h1 span {
+            color: #66e3ff;
+        }
+
+        .landing h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .landing p {
+            max-width: 650px;
+            margin: 12px auto;
+        }
+
+        .landing-btn {
+            display: inline-block;
+            background: #66e3ff;
+            color: #141e30;
+            padding: 11px 22px;
+            margin: 10px 5px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .landing-btn:hover {
+            background: white;
+        }
+
+        nav {
+            background: #243b53;
+            padding: 14px 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #66e3ff;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 25px;
+            scroll-margin-top: 65px;
+        }
+
+        section h2 {
+            color: #102a43;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #087e8b;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000010;
+            overflow-wrap: anywhere;
+        }
+
+        .card h3 {
+            color: #087e8b;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #087e8b;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #087e8b;
+            color: white;
+            padding: 11px 22px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background: #065f68;
+        }
+
+        .product-card {
+            max-width: 340px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .calculator {
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000010;
+            text-align: center;
+        }
+
+        .calculator h2 {
+            text-align: left;
+        }
+
+        .calculator input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .calculator button {
+            background: #087e8b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 17px;
+            margin: 4px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background: #065f68;
+        }
+
+        #result {
+            margin-top: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        .contact a {
+            color: #087e8b;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .landing {
+                padding: 45px 15px;
+            }
+
+            .landing h1 {
+                font-size: 29px;
+            }
+
+            .landing h2 {
+                font-size: 19px;
+            }
+
+            nav a {
+                margin: 5px 7px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 30px 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>U. Snehalatha</h1>
-        <p>B.Tech 3rd Year Student | CSE</p>
+
+    <!-- Welcome Section -->
+    <header class="landing" id="home">
+        <h1>Hi, I'm <span>Snehalatha</span> 👋</h1>
+        <h2>Aspiring Developer</h2>
+
+        <p>
+            Welcome to my portfolio! I'm learning programming,
+            web development, SQL, data analytics, and new technologies.
+            I enjoy learning new skills and building projects.
+        </p>
+
+        <a href="#projects" class="landing-btn">View My Projects</a>
+        <a href="#contact" class="landing-btn">Contact Me</a>
+
         <p>NBKR Institute of Science and Technology</p>
     </header>
 
-    <section>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#product">Product</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About -->
+    <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a B.Tech student interested in web development,
-            SQL, data analytics, and Artificial Intelligence.
-            I enjoy learning new technologies and building projects.
+            I am currently pursuing my B.Tech in Artificial Intelligence
+            and Data Science at NBKR Institute of Science and Technology.
+            I completed my diploma at Audi Sankara College of Engineering
+            and Technology. I am interested in improving my technical skills
+            and gaining practical experience through projects and internships.
         </p>
     </section>
 
-    <section>
-        <h2>My Skills</h2>
-        <ul>
-            <li>HTML and CSS</li>
-            <li>JavaScript Basics</li>
-            <li>SQL</li>
-            <li>Python Basics</li>
-        </ul>
+    <!-- Skills -->
+    <section id="skills">
+        <h2>My Skills &amp; Interests</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Learning Java, Python, and programming fundamentals.</p>
+            </div>
+
+            <div class="card">
+                <h3>Data Analytics</h3>
+                <p>SQL, data analysis, and business intelligence.</p>
+            </div>
+
+            <div class="card">
+                <h3>Artificial Intelligence</h3>
+                <p>Exploring Generative AI and AI applications.</p>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, and responsive website design.</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Personal Portfolio</h3>
-            <p>A website to showcase my skills and projects.</p>
+    <!-- Projects -->
+    <section id="projects">
+        <h2>My Projects &amp; Learning</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Personal Portfolio</h3>
+                <p>A website to showcase my education, skills, and projects.</p>
+            </div>
+
+            <div class="card">
+                <h3>Student Marks Analysis</h3>
+                <p>
+                    A Python project to display student marks,
+                    calculate average marks, and find the topper.
+                </p>
+                <a href="https://github.com/snehalathauppu-ux/student-marks-analysis"
+                   target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+
+            <div class="card">
+                <h3>Student Grade Calculator</h3>
+                <p>
+                    A Python project to calculate total marks,
+                    average, grade, and pass or fail result.
+                </p>
+                <a href="https://github.com/snehalathauppu-ux/student-grade-calculator"
+                   target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+
+            <div class="card">
+                <h3>SQL Analytics &amp; BI</h3>
+                <p>Learning SQL analytics and business intelligence through online courses.</p>
+            </div>
+
+            <div class="card">
+                <h3>Generative AI</h3>
+                <p>Learning the fundamentals and applications of Generative AI.</p>
+            </div>
         </div>
-        <div class="project">
-            <h3>SQL Analytics</h3>
-            <p>Learning SQL analytics and business intelligence.</p>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2>Education</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>B.Tech - AI &amp; Data Science</h3>
+                <p>NBKR Institute of Science and Technology</p>
+                <p>Currently pursuing</p>
+            </div>
+
+            <div class="card">
+                <h3>Diploma</h3>
+                <p>Audi Sankara College of Engineering and Technology</p>
+                <p>Completed</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Sample Product -->
+    <section id="product">
+        <h2>Sample Product</h2>
+
+        <div class="card product-card">
+            <img src="https://placehold.co/400x300?text=Wireless+Headphones"
+                 alt="Wireless Headphones">
+
+            <h3>Wireless Headphones</h3>
+            <p class="price">₹1,499</p>
+
+            <button class="btn" type="button" onclick="selectProduct()">
+                Buy Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="calculator">
+        <div class="calculator">
+            <h2>Simple Calculator</h2>
+
+            <input type="number" id="num1"
+                   placeholder="Enter first number" step="any">
+
+            <input type="number" id="num2"
+                   placeholder="Enter second number" step="any">
+
+            <div>
+                <button type="button" onclick="calculate('+')">+</button>
+                <button type="button" onclick="calculate('-')">−</button>
+                <button type="button" onclick="calculate('*')">×</button>
+                <button type="button" onclick="calculate('/')">÷</button>
+            </div>
+
+            <h3 id="result" aria-live="polite">Result:</h3>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+
         <p>
-            GitHub:
-            <a href="https://github.com/" target="_blank">My GitHub</a>
+            Email:
+            <a href="mailto:snehalathauppu@gmail.com">
+                snehalathauppu@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Feel free to contact me for learning opportunities,
+            internships, and collaboration.
         </p>
     </section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: snehalathauppu@gmail.com</p>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>© 2026 U. Snehalatha | My Portfolio</p>
+        <p>&copy; 2026 Snehalatha | Personal Portfolio</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function calculate(operator) {
+            const input1 = document.getElementById("num1").value;
+            const input2 = document.getElementById("num2").value;
+            const result = document.getElementById("result");
+
+            if (input1.trim() === "" || input2.trim() === "") {
+                result.textContent = "Please enter both numbers.";
+                return;
+            }
+
+            const a = Number(input1);
+            const b = Number(input2);
+            let answer;
+
+            switch (operator) {
+                case "+":
+                    answer = a + b;
+                    break;
+                case "-":
+                    answer = a - b;
+                    break;
+                case "*":
+                    answer = a * b;
+                    break;
+                case "/":
+                    if (b === 0) {
+                        result.textContent = "Cannot divide by zero.";
+                        return;
+                    }
+                    answer = a / b;
+                    break;
+                default:
+                    result.textContent = "Invalid operation.";
+                    return;
+            }
+
+            if (!Number.isFinite(answer)) {
+                result.textContent = "Result is too large.";
+                return;
+            }
+
+            result.textContent = "Result: " + answer;
+        }
+
+        function selectProduct() {
+            alert("Product selected!");
+        }
+    </script>
+
 </body>
 </html>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #263238;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #183153;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-section {
-    max-width: 800px;
-    margin: 25px auto;
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px #00000012;
-}
-
-h2 {
-    color: #2563eb;
-}
-
-.project {
-    padding: 12px;
-    margin: 12px 0;
-    border-left: 4px solid #2563eb;
-    background-color: #f4f7fb;
-}
-
-a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #183153;
-    color: white;
-}
-    
-
-    
